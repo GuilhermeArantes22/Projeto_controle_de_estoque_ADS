@@ -3,6 +3,7 @@ import { useState } from "react"
 import Login from "./pages/login/Login"
 import HomeAdmin from "./pages/HomeAdmin/HomeAdmin"
 import HomeUsuario from "./pages/HomeUsuarios/HomeUsuario"
+import "./App.css"
 
 function App() {
  const [tela, setTela] = useState("login")
@@ -48,7 +49,7 @@ function App() {
  
  
  return (
-     <>
+     <div className="app-container">
       {tela === "login" && (
       <Login setTela={setTela} setUsuario={setUsuario}/>
       )}
@@ -56,6 +57,7 @@ function App() {
 
 
       {tela === "admin" && (
+        <div className="painel-geral">
         <HomeAdmin
         usuario={usuario}
 
@@ -65,17 +67,20 @@ function App() {
           diminuirQuantidade={diminuirQuantidade}
           removerProduto={removerProduto}
         />
+        </div>
       )}
 
       {tela === "user" && (
-        <HomeUsuario
-        usuario={usuario}
-          produtos={produtos}
-          aumentarQuantidade={aumentarQuantidade}
-          diminuirQuantidade={diminuirQuantidade}
-        />
+        <div className="painel-geral">
+          <HomeUsuario
+            usuario={usuario}
+            produtos={produtos}
+            aumentarQuantidade={aumentarQuantidade}
+            diminuirQuantidade={diminuirQuantidade}
+          />
+          </div>
       )}
-    </>
+      </div>
   )
 }
 

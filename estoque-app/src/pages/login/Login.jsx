@@ -15,29 +15,45 @@ alert("Login inválido")
 
   }
 
+ 
+
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="login-page">
+      <div className="login-card">
+        <div className="login-header">
+          <span className="login-icon">⛪</span>
+          <h2>Acesso ao Sistema</h2>
+          <p>Controle de Estoque - Igreja</p>
+        </div>
 
-      <input
-        type="text"
-        placeholder="Usuário"
-        value={usuario}
-        onChange={(e) => setUsuario(e.target.value)}
-      />
+        <div className="login-form">
+          <div className="input-group">
+            <label>Usuário</label>
+            <input
+              type="text"
+              placeholder="Digite o usuário"
+              className="login-input"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}
+            />
+          </div>
 
-      <br /><br />
+          <div className="input-group">
+            <label>Senha</label>
+            <input
+              type="password"
+              placeholder="Digite a senha"
+              className="login-input"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+          </div>
 
-      <input
-        type="password"
-        placeholder="Senha"
-        value={senha}
-        onChange={(e) => setSenha(e.target.value)}
-      />
-
-      <br /><br />
-
-      <button onClick={handleLogin}>Entrar</button>
+          <button className="btn-login" onClick={handleLogin}>
+            Entrar
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

@@ -24,19 +24,22 @@ function CadastroProduto({ adicionarProduto }) {
   }
 
   return (
-    <div>
-      <h2>Cadastrar Produto</h2>
+    <div className="card-cadastro">
+      <h2 className="titulo-cadastro">Cadastrar Produto</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-cadastro">
+        <div className="input-group">
         <input
           type="text"
           placeholder="Nome do produto"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
         />
+        </div>
 
-        <br /><br />
 
+       
+      <div className="input-group">
         <input
           type="number"
           placeholder="Quantidade"
@@ -44,9 +47,9 @@ function CadastroProduto({ adicionarProduto }) {
           onChange={(e) => setQuantidade(e.target.value)}
         />
 
-        <br /><br />
+        </div>  
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit" className="btn-cadastrar">Cadastrar</button>
       </form>
     </div>
   )
