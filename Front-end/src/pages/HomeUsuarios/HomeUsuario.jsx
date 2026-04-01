@@ -1,6 +1,14 @@
 import ListaProdutos from "../HomeAdmin/ListaProdutos"
 
-function HomeUsuario({ usuario, produtos, aumentarQuantidade, diminuirQuantidade }) {
+
+function HomeUsuario({ setTela, usuario, produtos, aumentarQuantidade, diminuirQuantidade }) {
+  const handleLogout = () => {
+    setTela("login"); 
+  };
+ 
+
+
+
   return (
     <div className="home-container">
       <header className="home-header">
@@ -8,7 +16,7 @@ function HomeUsuario({ usuario, produtos, aumentarQuantidade, diminuirQuantidade
           <h1>Consulta de Estoque</h1>
           <p>Operador: <strong>{usuario}</strong></p>
         </div>
-        <button className="btn-logout">Sair</button>
+       <button className="btn-logout" onClick={handleLogout}>Sair</button>
       </header>
 
       <main className="home-content">

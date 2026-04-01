@@ -1,7 +1,12 @@
 import CadastroProduto from "./CadastroProduto"
 import ListaProdutos from "./ListaProdutos"
 
-function HomeAdmin({ usuario, produtos, adicionarProduto, aumentarQuantidade, diminuirQuantidade, removerProduto }) {
+
+function HomeAdmin({ usuario,setTela, produtos, adicionarProduto, aumentarQuantidade, diminuirQuantidade, removerProduto }) {
+ const handleLogout = () => {
+    setTela("login") // Agora ele usa a função que veio do App.jsx
+  };
+  
   return (
     <div className="home-container">
       <header className="home-header">
@@ -9,7 +14,7 @@ function HomeAdmin({ usuario, produtos, adicionarProduto, aumentarQuantidade, di
           <h1>Painel Administrativo</h1>
           <p>Bem-vindo, <strong>{usuario}</strong> 👋</p>
         </div>
-        <button className="btn-logout">Sair</button>
+       <button className="btn-logout"onClick={handleLogout} >Sair</button>
       </header>
 
       <main className="home-content">

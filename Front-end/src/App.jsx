@@ -60,6 +60,7 @@ function App() {
         <div className="painel-geral">
         <HomeAdmin
         usuario={usuario}
+        setTela={setTela}
 
           produtos={produtos}
           adicionarProduto={adicionarProduto}
@@ -73,6 +74,7 @@ function App() {
       {tela === "user" && (
         <div className="painel-geral">
           <HomeUsuario
+          setTela={setTela}
             usuario={usuario}
             produtos={produtos}
             aumentarQuantidade={aumentarQuantidade}
